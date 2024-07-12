@@ -26,7 +26,10 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent telaPrincipal = new Intent(SplashActivity.this, GasetaActivity.class);
+                Intent telaPrincipal = new Intent(
+                        SplashActivity.this,
+                        GasEtaActivity.class);
+
                 startActivity(telaPrincipal);
                 finish();
             }

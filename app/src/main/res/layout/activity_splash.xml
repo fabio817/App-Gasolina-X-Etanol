@@ -8,8 +8,8 @@
     tools:context=".view.SplashActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="247dp"
-        android:layout_height="279dp"
+        android:layout_width="284dp"
+        android:layout_height="334dp"
         android:src="@drawable/gaseta_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

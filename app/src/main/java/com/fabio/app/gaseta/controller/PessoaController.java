@@ -6,14 +6,14 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.fabio.app.gaseta.model.Pessoa;
-import com.fabio.app.gaseta.view.GasetaActivity;
+import com.fabio.app.gaseta.view.MainActivity;
 
 public class PessoaController {
     SharedPreferences preferences;
     SharedPreferences.Editor listavip;
     public static final String NOME_PREFERENCES = "pref_listavip";
 
-    public PessoaController(GasetaActivity activity) {
+    public PessoaController(MainActivity activity) {
         preferences =
                 activity.getSharedPreferences(NOME_PREFERENCES, 0);
         listavip = preferences.edit();

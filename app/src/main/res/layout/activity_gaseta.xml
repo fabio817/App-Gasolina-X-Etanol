@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.GasetaActivity">
+    tools:context=".view.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -48,13 +48,13 @@
 
             <EditText
                 android:id="@+id/edit_text_gasolina"
-                style="@style/FormEditText"
+                style="@style/FormEditTextGasEta"
                 android:hint="@string/gasolina"
                 android:inputType="numberDecimal" />
 
             <EditText
                 android:id="@+id/edit_text_etanol"
-                style="@style/FormEditText"
+                style="@style/FormEditTextGasEta"
                 android:hint="@string/etanol"
                 android:inputType="numberDecimal" />
 
@@ -62,7 +62,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_calcular"
-                style="@style/FormButton"
+                style="@style/FormButtonGasEta"
                 android:layout_width="150dp"
                 android:text="@string/calcular"
                 android:layout_gravity="center"
@@ -82,21 +82,20 @@
                 android:textStyle="bold"
                 android:textColor="@color/blueEnable"/>
 
-
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonLimpar"
-                    style="@style/FormButton"
+                    style="@style/FormButtonGasEta"
                     android:text="@string/limpar" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonSalvar"
-                    style="@style/FormButton"
+                    style="@style/FormButtonGasEta"
                     android:text="@string/salvar" />
 
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonFinalizar"
-                style="@style/FormButton"
+                style="@style/FormButtonGasEta"
                 android:text="@string/finalizar" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

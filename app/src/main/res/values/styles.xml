@@ -7,21 +7,38 @@
     </style>
 
     <style name="FormEditText" parent="FormEditContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginTop">25dp</item>
+        <item name="android:background">@drawable/edit_text_form</item>
+        <item name="android:paddingStart">15dp</item>
+    </style>
+
+    <style name="FormButton" parent="FormEditContainer">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/edit_text_form_botton</item>
+        <item name="android:textColor">@color/yellowDisable</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="FormEditTextGasEta" parent="FormEditContainer">
         <item name="android:layout_width">140dp</item>
         <item name="android:layout_height">48dp</item>
         <item name="android:background">@drawable/edit_text_form</item>
         <item name="android:textAlignment">center</item>
     </style>
 
-    <style name="FormButton" parent="FormEditContainer">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@drawable/edit_text_form_botton</item>
-        <item name="android:textColor">@android:color/black</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:layout_marginTop">5dp</item>
-        <item name="android:layout_marginBottom">5dp</item>
-        <item name="android:textSize">20sp</item>
+    <style name="FormButtonGasEta" parent="FormEditContainer">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:background">@drawable/edit_text_form_botton_gas</item>
+    <item name="android:textColor">@android:color/black</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:layout_marginTop">5dp</item>
+    <item name="android:layout_marginBottom">5dp</item>
+    <item name="android:textSize">20sp</item>
     </style>
 
 </resources>
