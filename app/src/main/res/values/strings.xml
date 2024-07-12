@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Gasolina x Etanol</string>
+    <string name="gasolina">Gasolina</string>
+    <string name="etanol">Etanol</string>
+    <string name="calcular">Calcular</string>
+    <string name="salvar">Salvar</string>
+    <string name="finalizar">Finalizar</string>
+    <string name="curso">Curso Desejado</string>
+    <string name="contato">Telefone</string>
+    <string name="selecionar_curso">Selecione o Curso</string>
+    <string name="resultado">Resultado</string>
+    <string name="limpar">Limpar</string>
+</resources>

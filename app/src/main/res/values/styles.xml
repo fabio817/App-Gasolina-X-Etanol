@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="FormEditContainer">
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+
+    <style name="FormEditText" parent="FormEditContainer">
+        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@drawable/edit_text_form</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="FormButton" parent="FormEditContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/edit_text_form_botton</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+</resources>

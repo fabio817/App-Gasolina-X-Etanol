@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.GasetaActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_view_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:layout_marginBottom="15dp"
+                android:layout_gravity="center"
+                android:text="@string/app_name"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Image_view_foto"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="15dp"
+                android:layout_gravity="center"
+                android:src="@drawable/gaseta_logo"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+            <EditText
+                android:id="@+id/edit_text_gasolina"
+                style="@style/FormEditText"
+                android:hint="@string/gasolina"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/edit_text_etanol"
+                style="@style/FormEditText"
+                android:hint="@string/etanol"
+                android:inputType="numberDecimal" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_calcular"
+                style="@style/FormButton"
+                android:layout_width="150dp"
+                android:text="@string/calcular"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_view_resultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="35dp"
+                android:layout_gravity="center"
+                android:text="@string/resultado"
+                android:textAllCaps="true"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/blueEnable"/>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonLimpar"
+                    style="@style/FormButton"
+                    android:text="@string/limpar" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonSalvar"
+                    style="@style/FormButton"
+                    android:text="@string/salvar" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonFinalizar"
+                style="@style/FormButton"
+                android:text="@string/finalizar" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>
