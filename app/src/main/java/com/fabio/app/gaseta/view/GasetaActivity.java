@@ -12,9 +12,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fabio.app.gaseta.R;
+import com.fabio.app.gaseta.model.Combustivel;
 import com.fabio.app.gaseta.util.UtilGasEta;
 
 public class GasEtaActivity extends AppCompatActivity {
+
+    Combustivel combustivelGasolina;
+    Combustivel combustivelEtanol;
 
     EditText editGasolina;
     EditText editEtanol;
@@ -74,25 +78,44 @@ public class GasEtaActivity extends AppCompatActivity {
 
                     textResultado.setText(recomendado);
 
+                    salvar.setEnabled(true);
+
                 } else {
                     Toast.makeText(GasEtaActivity.this, "Digitar os Campos Obrigátorios", Toast.LENGTH_LONG).show();
+                    salvar.setEnabled(false);
                 }
 
             }
         });
+
         limpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 editGasolina.setText("");
                 editEtanol.setText("");
+
+                salvar.setEnabled(false);
             }
         });
+
         salvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                combustivelGasolina = new Combustivel();
+                combustivelGasolina.setNomeDoCombustivel("Gasolina");
+                combustivelGasolina.setPrecoDoCombustivel(precoGasolina);
+
+                combustivelEtanol = new Combustivel();
+                combustivelEtanol.setNomeDoCombustivel("Etanol");
+                combustivelEtanol.setPrecoDoCombustivel(precoEtanol);
+
+                combustivelGasolina.setRecomendacao(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
+                combustivelEtanol.setRecomendacao(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
+
             }
         });
+
         finalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,11 +123,5 @@ public class GasEtaActivity extends AppCompatActivity {
                 finish();;
             }
         });
-
-
-      //  UtilGasEta.calcularMelhorOpcao();
-
     }
-
-
 }

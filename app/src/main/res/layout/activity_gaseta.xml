@@ -90,7 +90,8 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonSalvar"
                     style="@style/FormButtonGasEta"
-                    android:text="@string/salvar" />
+                    android:text="@string/salvar"
+                    android:enabled="false"/>
 
 
             <androidx.appcompat.widget.AppCompatButton
