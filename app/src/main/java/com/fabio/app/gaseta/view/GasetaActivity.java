@@ -77,6 +77,8 @@ public class GasEtaActivity extends AppCompatActivity {
 
                     textResultado.setText(recomendado);
                     salvar.setEnabled(true);
+                } else {
+                    salvar.setEnabled(false);
                 }
 /*                if(TextUtils.isEmpty(editGasolina.getText()));{
                     editGasolina.setError("* Obrigatorio");
@@ -122,23 +124,33 @@ public class GasEtaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                controller = new CombustivelController(GasEtaActivity.this );
+                if (TextUtils.isEmpty(editGasolina.getEditableText())){
+                    Toast.makeText(GasEtaActivity.this, "Digitar os Campos Obrigátorios", Toast.LENGTH_LONG).show();
+                    salvar.setEnabled(false);
+                } else
+                if (TextUtils.isEmpty(editEtanol.getEditableText())){
+                    Toast.makeText(GasEtaActivity.this, "Digitar os Campos Obrigátorios", Toast.LENGTH_LONG).show();
+                    salvar.setEnabled(false);}
+                else
+                {controller = new CombustivelController(GasEtaActivity.this );
 
-                combustivelGasolina = new Combustivel();
-                combustivelGasolina.setNomeDoCombustivel("Gasolina");
-                combustivelGasolina.setPrecoDoCombustivel(precoGasolina);
+                    combustivelGasolina = new Combustivel();
+                    combustivelGasolina.setNomeDoCombustivel("Gasolina");
+                    combustivelGasolina.setPrecoDoCombustivel(precoGasolina);
 
-                combustivelEtanol = new Combustivel();
-                combustivelEtanol.setNomeDoCombustivel("Etanol");
-                combustivelEtanol.setPrecoDoCombustivel(precoEtanol);
+                    combustivelEtanol = new Combustivel();
+                    combustivelEtanol.setNomeDoCombustivel("Etanol");
+                    combustivelEtanol.setPrecoDoCombustivel(precoEtanol);
 
-                combustivelGasolina.setRecomendado(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
-                combustivelEtanol.setRecomendado(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
+                    combustivelGasolina.setRecomendado(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
+                    combustivelEtanol.setRecomendado(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
 
-                controller.salvar(combustivelGasolina);
-                controller.salvar(combustivelEtanol);
+                    controller.salvar(combustivelGasolina);
+                    controller.salvar(combustivelEtanol);
 
-                Toast.makeText(GasEtaActivity.this, "SALVO COM SUSSESSO", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(GasEtaActivity.this, "SALVO COM SUSSESSO", Toast.LENGTH_SHORT).show();
+                }
+
 
             }
         });
