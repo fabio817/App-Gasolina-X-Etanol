@@ -6,12 +6,13 @@ public class UtilGasEta {
 
 
 
-    public static String calcularMelhorOpcao(double editGasolina, double editEtanol ){
 
-        double precoIdeal = editGasolina * 0.70;
+    public static String calcularMelhorOpcao(double precoGasolina, double precoEtanol ){
+
+        double precoIdeal = precoGasolina * 0.70;
         String messagemDeRetorno;
 
-        if (editEtanol <= precoIdeal) {
+        if (precoEtanol <= precoIdeal) {
             messagemDeRetorno = "melhor abastecer com Etanol";
 
         } else {

@@ -12,10 +12,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.fabio.app.gaseta.R;
+import com.fabio.app.gaseta.controller.CombustivelController;
 import com.fabio.app.gaseta.model.Combustivel;
 import com.fabio.app.gaseta.util.UtilGasEta;
 
 public class GasEtaActivity extends AppCompatActivity {
+
+    CombustivelController controller;
 
     Combustivel combustivelGasolina;
     Combustivel combustivelEtanol;
@@ -58,19 +61,35 @@ public class GasEtaActivity extends AppCompatActivity {
             public void onClick(View v) {
                 boolean isDadosOk = true;
 
-                if(TextUtils.isEmpty(editGasolina.getText()));{
+                if(TextUtils.isEmpty(editGasolina.getEditableText())){
+                    editGasolina.setError("Digitar o Valor");
+                    Toast.makeText(GasEtaActivity.this, "Digitar os Campos Obrigátorios", Toast.LENGTH_LONG).show();
+                    isDadosOk = false;
+                } else if (TextUtils.isEmpty(editEtanol.getEditableText())){
+                    editEtanol.setError("Digitar o valor");
+                    Toast.makeText(GasEtaActivity.this, "Digitar os Campos Obrigátorios", Toast.LENGTH_LONG).show();
+                    isDadosOk = false;
+                } else if (isDadosOk) {
+                    precoGasolina = Double.parseDouble(editGasolina.getEditableText().toString());
+                    precoEtanol = Double.parseDouble(editEtanol.getEditableText().toString());
+
+                    recomendado = UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol);
+
+                    textResultado.setText(recomendado);
+                    salvar.setEnabled(true);
+                }
+/*                if(TextUtils.isEmpty(editGasolina.getText()));{
                     editGasolina.setError("* Obrigatorio");
                     editGasolina.requestFocus();
                     isDadosOk = false;
-                }
+                }*/
 
+/*
                 if(TextUtils.isEmpty(editEtanol.getText()));{
                     editEtanol.setError("*Obrigatorio");
-                    isDadosOk = false;
+                    editEtanol.requestFocus();
                 }
-
                 if (isDadosOk){
-
                     precoGasolina = Double.parseDouble(editGasolina.getText().toString());
                     precoEtanol = Double.parseDouble(editEtanol.getText().toString());
 
@@ -84,6 +103,7 @@ public class GasEtaActivity extends AppCompatActivity {
                     Toast.makeText(GasEtaActivity.this, "Digitar os Campos Obrigátorios", Toast.LENGTH_LONG).show();
                     salvar.setEnabled(false);
                 }
+*/
 
             }
         });
@@ -102,6 +122,8 @@ public class GasEtaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                controller = new CombustivelController(GasEtaActivity.this );
+
                 combustivelGasolina = new Combustivel();
                 combustivelGasolina.setNomeDoCombustivel("Gasolina");
                 combustivelGasolina.setPrecoDoCombustivel(precoGasolina);
@@ -110,8 +132,13 @@ public class GasEtaActivity extends AppCompatActivity {
                 combustivelEtanol.setNomeDoCombustivel("Etanol");
                 combustivelEtanol.setPrecoDoCombustivel(precoEtanol);
 
-                combustivelGasolina.setRecomendacao(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
-                combustivelEtanol.setRecomendacao(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
+                combustivelGasolina.setRecomendado(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
+                combustivelEtanol.setRecomendado(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
+
+                controller.salvar(combustivelGasolina);
+                controller.salvar(combustivelEtanol);
+
+                Toast.makeText(GasEtaActivity.this, "SALVO COM SUSSESSO", Toast.LENGTH_SHORT).show();
 
             }
         });

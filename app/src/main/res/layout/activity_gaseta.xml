@@ -71,14 +71,17 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/text_view_resultado"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="35dp"
                 android:layout_gravity="center"
                 android:text="@string/resultado"
+                android:textAlignment="center"
                 android:textAllCaps="true"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/blueEnable"/>
 
@@ -91,6 +94,7 @@
                     android:id="@+id/buttonSalvar"
                     style="@style/FormButtonGasEta"
                     android:text="@string/salvar"
+                    android:background="@drawable/edit_text_form_select"
                     android:enabled="false"/>
 
 

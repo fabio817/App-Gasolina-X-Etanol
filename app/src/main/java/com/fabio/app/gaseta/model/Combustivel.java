@@ -4,7 +4,7 @@ public class Combustivel {
 
     private String nomeDoCombustivel;
     private Double precoDoCombustivel;
-    private String recomendacao;
+    private String recomendado;
 
     public String getNomeDoCombustivel() {
         return nomeDoCombustivel;
@@ -22,11 +22,11 @@ public class Combustivel {
         this.precoDoCombustivel = precoDoCombustivel;
     }
 
-    public String getRecomendacao() {
-        return recomendacao;
+    public String getRecomendado() {
+        return recomendado;
     }
 
-    public void setRecomendacao(String recomendacao) {
-        this.recomendacao = recomendacao;
+    public void setRecomendado(String recomendado) {
+        this.recomendado = recomendado;
     }
 }
